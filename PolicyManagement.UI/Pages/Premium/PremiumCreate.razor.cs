@@ -49,7 +49,7 @@ namespace PolicyManagement.UI.Pages.Premium
         }
         protected async Task HandleValidSubmit()
         {
-            if (policyRequestModel.Id != 0) // is a new creation 
+            if (policyRequestModel.FirstName!=null) // is a new creation 
             {
                 var policyPostResponse = await PremiumServiceProvider.AddPolicy(policyRequestModel);
 
