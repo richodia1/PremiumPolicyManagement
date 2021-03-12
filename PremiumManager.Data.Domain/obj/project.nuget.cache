@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "zQ+Q8nozncajA8xVgWAdl3d9BZAbAhhcd81rYxsKZMkQay2bCWrGi1qhESjr3C84N/Woo0oD3qriBKLS94QBfA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\okosodor\\source\\repos\\VehicleThirdPartyPolicyManagement\\PremiumManager.Data.Domain\\PremiumManager.Data.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\okosodor\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\okosodor\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

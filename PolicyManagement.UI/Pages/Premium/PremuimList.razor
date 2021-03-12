@@ -1,0 +1,79 @@
+﻿@page "/"
+
+<h2 class="font-sm2 p-2">Dashboard of premium list</h2>
+<a href="@($"CreatePremium/")" class="btn btn-primary">Initiate Premium</a>
+<div style="height:500px;overflow-y:scroll">
+    <div class="table-12">
+        <table class="table font-xs">
+            <thead>
+                <tr class="title-12">
+                    <th scope="col">S/N</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Date Of Birth</th>
+                    <th scope="col">Registration Number</th>
+                    <th scope="col">Vehicle Model</th>
+                    <th scope="col">Vehicle Make</th>
+                    <th scope="col">Vehicle Type</th>
+                    <th scope="col">Vehicle Premium</th>
+                    <th scope="col">Action</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var premium in policyList)
+                {
+                    <tr class="table-text">
+                        <th scope="row">@premium.Id</th>
+                        <td>@premium.FirstName</td>
+                        <td>@premium.LastName</td>
+                        <td>@premium.PhoneNumber</td>
+                        <td>@premium.DateOfBirth</td>
+                        <td>@premium.RegistrationNumber</td>
+                        <td>@premium.CarModel</td>
+                        <td>@premium.CardMake</td>
+                        <td>@premium.PremType</td>
+                        <td>@premium.Premium</td>
+
+                        <td class="pt-2">
+                            <a href="@($"PremiumDetail/{premium.Id}")">Details|</a>
+                             
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="position-absolute fixed-bottom d-flex justify-content-lg-between align-items-center align-self-end px-2 font-xs">
+            <p class="text-16 black-custom">Showing 1 - 1 of 1 entry</p>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination pagination-links justify-content-end text-16 grey-custom">
+                    <li class="page-item disabled">
+                        <a class="page-link black-custom border-0" href="#"
+                           tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link black-custom border-0 active"
+                           href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link black-custom border-0"
+                           href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link black-custom border-0"
+                           href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link black-custom border-0"
+                           href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+

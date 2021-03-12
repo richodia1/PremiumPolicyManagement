@@ -1,0 +1,122 @@
+﻿@page "/CreatePremium/"
+    <div style="height:500px;overflow-y:scroll">
+        <EditForm Model="@policyRequestModel" OnValidSubmit="@HandleValidSubmit">
+            <h3>Create Premium</h3>
+            <hr />
+            <div class="form-group row">
+                <label for="firstName" class="col-sm-2 col-form-label">
+                    First Name :
+                </label>
+                <div class="col-sm-5">
+                    <InputText id="firstName" class="form-control"
+                               @bind-Value="policyRequestModel.FirstName" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="lastName" class="col-sm-2 col-form-label">
+                    Last Name :
+                </label>
+                <div class="col-sm-5">
+                    <InputText id="lastName" class="form-control"
+                               @bind-Value="policyRequestModel.LastName" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">
+                    Phone Number :
+                </label>
+                <div class="col-sm-5">
+                    <InputText id="email" class="form-control"
+                               @bind-Value="policyRequestModel.PhoneNumber" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">
+                    Date Of Birth :
+                </label>
+                <div class="col-sm-5">
+                    <InputDate id="birthdate" class="form-control col-sm-8" placeholder="Enter birthdate"
+                               @bind-Value="policyRequestModel.DateOfBirth" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">
+                    Registration:
+                </label>
+                <div class="col-sm-5">
+                    <InputText id="email" class="form-control"
+                               @bind-Value="policyRequestModel.RegistrationNumber" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">
+                    Car Model
+                </label>
+                <div class="col-sm-5">
+                    <select class="custom-select my-1 mr-sm-2 input-field font-xs" @onchange=@OnCarModelSelect
+                            id="RequestType" required>
+                        <option value="" disabled hidden selected>
+                            Select Vehicle Make
+                        </option>
+                        @foreach (var mod in modelMakes)
+                        {
+                            <option value="@mod.CardMake">@mod.CardMake</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group d-flex align-items-end mt-4 font-sm">
+                <div class="col-lg-8 px-0 d-flex align-items-center flex-wrap">
+                    <div class="col-lg-4 px-0">
+                        <label for="" class=" mb-0">Vehicle Model:</label>
+                    </div>
+                    <div class="px-0 col-lg-7">
+                        <p class="mb-0">@policyRequestModel.CarModel</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label">
+                    Car Body Type
+                </label>
+                <div class="col-sm-5">
+                    <select class="custom-select my-1 mr-sm-2 input-field font-xs" @onchange=@OnPremiumTypeSelect
+                            id="RequestType" required>
+                        <option value="" disabled hidden selected>
+                            Select Premium Type
+                        </option>
+                        @foreach (var mod in premiumTypes)
+                        {
+                            <option value="@mod.PremType">@mod.PremType</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group d-flex align-items-end mt-4 font-sm">
+                <div class="col-lg-8 px-0 d-flex align-items-center flex-wrap">
+                    <div class="col-lg-4 px-0">
+                        <label for="" class=" mb-0">Premium Rate:</label>
+                    </div>
+                    <div class="px-0 col-lg-7">
+                        <p class="mb-0">@policyRequestModel.Premium</p>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary edit-btn">Create Premium</button>
+            <a class="btn btn-outline-primary edit-outline-btn" @onclick="@NavigateToOverview">Cancel</a>
+        </EditForm>
+    </div>
+@code{
+    void OnCarModelSelect(ChangeEventArgs e)
+    {
+        policyRequestModel.CardMake = modelMakes.Where(x => x.CardMake == e.Value.ToString()).Select(x => x.CardMake).FirstOrDefault();
+        policyRequestModel.CarModel = modelMakes.Where(x => x.CardMake == e.Value.ToString()).Select(x => x.CarModel).FirstOrDefault();
+    }
+    void @OnPremiumTypeSelect(ChangeEventArgs e)
+    {
+        policyRequestModel.PremType = premiumTypes.Where(x => x.PremType == e.Value.ToString()).Select(x => x.PremType).FirstOrDefault();
+        policyRequestModel.Premium = premiumTypes.Where(x => x.PremType == e.Value.ToString()).Select(x => x.Premium).FirstOrDefault();
+    }
+}
