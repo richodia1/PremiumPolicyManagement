@@ -23,17 +23,17 @@ namespace PolicyManagement.UI.Pages.Premium
 
         private List<ModelMake> modelMakes = new List<ModelMake>
             {
-            new ModelMake { Id = 1, CarModel = "Corolla", CardMake  ="Toyota" },
+            new ModelMake { Id = 1, CarModel = "Corolla", CardMake  ="Kia" },
             new ModelMake { Id = 2, CarModel = "Camery", CardMake  = "Toyota" },
             new ModelMake { Id = 3, CarModel= "Accord",CardMake  = "Honda" },
-            new ModelMake { Id = 4, CarModel = "Civic", CardMake  = "Honda" }
+            new ModelMake { Id = 4, CarModel = "Civic", CardMake  = "Jeep" }
             };
 
         private List<PremiumType> premiumTypes = new List<PremiumType> {
             new PremiumType { Id = 1, Premium = "₦5000", PremType ="Car" },
-            new PremiumType { Id = 2, Premium = "₦5000", PremType = "SUV" },
+            new PremiumType { Id = 2, Premium = "₦10000", PremType = "SUV" },
             new PremiumType { Id = 3, Premium = "₦7500", PremType = "Truck" },
-            new PremiumType { Id = 4, Premium = "₦5000", PremType = "Van" }
+            new PremiumType { Id = 4, Premium = "₦14000", PremType = "Van" }
         };
 
         protected override async Task OnInitializedAsync()

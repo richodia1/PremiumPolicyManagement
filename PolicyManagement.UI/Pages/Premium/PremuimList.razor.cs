@@ -25,5 +25,10 @@ namespace PolicyManagement.UI.Pages.Premium
         {
             policyList = (await PremiumServiceProvider.GetAllPolicy()).ToList();
         }
+
+        void OnDelete(ChangeEventArgs e)
+        {
+
+        }
     }
 }

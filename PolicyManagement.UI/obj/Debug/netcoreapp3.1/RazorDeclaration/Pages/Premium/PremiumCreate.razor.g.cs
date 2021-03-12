@@ -91,7 +91,7 @@ using PolicyManagement.UI.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 111 "C:\Users\okosodor\source\repos\VehicleThirdPartyPolicyManagement\PolicyManagement.UI\Pages\Premium\PremiumCreate.razor"
+#line 119 "C:\Users\okosodor\source\repos\VehicleThirdPartyPolicyManagement\PolicyManagement.UI\Pages\Premium\PremiumCreate.razor"
       
     void OnCarModelSelect(ChangeEventArgs e)
     {
